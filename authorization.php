@@ -37,7 +37,7 @@ class Authorization extends \Zaphpa\BaseMiddleware
         }
 
         if ($bErrorAuth) {
-            $code = Constants::CODE_UNAUTH;
+            $code = 401;
             $res->disableBrowserCache();
             $ob = new ResultError($code, Loc::getMessage("WEBSERVICE_SERVER_ERROR_ATHORIZATION"));
             $res->add($ob->toJSON());
